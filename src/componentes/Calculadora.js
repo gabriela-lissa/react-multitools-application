@@ -39,14 +39,13 @@ if (tecla === "=") {
     setDisplay(isFinite(resultado) ? res : "Erro");
     setExpressao(isFinite(resultado) ? res : "");
     setNovoNumero(true);
-    } catch {
+    } catch (error) {
       setDisplay("Erro");
       setExpressao("");
     }
+    return;
   }
-      }
-      return;
-    }
+  
 
     const operadores = ["÷", "×", "+", "−"];
 
