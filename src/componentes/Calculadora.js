@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Calculadora.css";
+import { evaluate } from "mathjs";
 
 const TECLAS = [
   ["C", "±", "%", "÷"],
@@ -22,19 +23,27 @@ function Calculadora() {
       return;
     }
 
-    if (tecla === "=") {
-      try {
-        const expr = expressao.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-");
-        const resultado = Function('"use strict"; return (' + expr + ")")();
-        const res = Number.isInteger(resultado)
-          ? String(resultado)
-          : parseFloat(resultado.toFixed(10)).toString();
-        setDisplay(isFinite(resultado) ? res : "Erro");
-        setExpressao(isFinite(resultado) ? res : "");
-        setNovoNumero(true);
-      } catch {
-        setDisplay("Erro");
-        setExpressao("");
+if (tecla === "=") {
+  try {
+    const expr = expressao
+      .replace(/×/g, "*")
+      .replace(/÷/g, "/")
+      .replace(/−/g, "-");
+
+    const resultado = evaluate(expr);
+
+    const res = Number.isInteger(resultado)
+      ? String(resultado)
+      : parseFloat(resultado.toFixed(10)).toString();
+
+    setDisplay(isFinite(resultado) ? res : "Erro");
+    setExpressao(isFinite(resultado) ? res : "");
+    setNovoNumero(true);
+    } catch {
+      setDisplay("Erro");
+      setExpressao("");
+    }
+  }
       }
       return;
     }
