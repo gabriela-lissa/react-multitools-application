@@ -1,0 +1,31 @@
+.cont-label {
+  font-size: 14px;
+  color: #6b6b68;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.cont-numero {
+  font-size: 80px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  padding: 1.5rem 0;
+  color: #1c1c1a;
+  transition: color 0.2s;
+}
+
+.cont-numero.positivo {
+  color: #1a7a4a;
+}
+
+.cont-numero.negativo {
+  color: #c0392b;
+}
+
+.cont-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

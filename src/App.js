@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import TodoList from "./componentes/TodoList";
+import Contador from "./componentes/Contador";
+import JogoDaVelha from "./componentes/JogoDaVelha";
+import Calculadora from "./componentes/Calculadora";
+import BuscaCEP from "./componentes/BuscaCEP";
+import "./App.css";
+
+
+const abas = [
+  { id: "todolist", label: "To Do List" },
+  { id: "contador", label: "Contador de Cliques" },
+  { id: "jogodavelha", label: "Jogo da Velha" },
+  { id: "calculadora", label: "Calculadora" },
+  { id: "buscacep", label: "Buscador de CEP" },
+];
 
 function App() {
+  const [abaAtiva, setAbaAtiva] = useState("todolist");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="header">
+        <div className="header-inner">
+          <span className="app-title">React App</span>
+          <nav className="nav">
+            {abas.map((aba) => (
+              <button
+                key={aba.id}
+                className={`nav-btn ${abaAtiva === aba.id ? "ativo" : ""}`}
+                onClick={() => setAbaAtiva(aba.id)}
+              >
+                {aba.label}
+              </button>
+            ))}
+          </nav>
+        </div>
       </header>
+
+      <main className="main">
+        {abaAtiva === "todolist" && <TodoList />}
+        {abaAtiva === "contador" && <Contador />}
+        {abaAtiva === "jogodavelha" && <JogoDaVelha />}
+        {abaAtiva === "calculadora" && <Calculadora />}
+        {abaAtiva === "buscacep" && <BuscaCEP  />}
+      </main>
     </div>
   );
 }

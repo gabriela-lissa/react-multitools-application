@@ -1,0 +1,66 @@
+.cep-hint {
+  font-size: 14px;
+  color: #6b6b68;
+  margin-bottom: 1rem;
+}
+
+.cep-erro {
+  font-size: 14px;
+  color: #c0392b;
+  background: #fdf2f1;
+  border: 1px solid #f5c6c3;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 1rem;
+}
+
+.cep-resultado {
+  background: #f5f5f4;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.cep-badge {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #185fa5;
+  background: #edf4fc;
+  border: 1px solid #b5d4f4;
+  border-radius: 8px;
+  padding: 4px 14px;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.cep-campos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cep-campo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid #e5e5e3;
+  font-size: 14px;
+}
+
+.cep-campo:last-child {
+  border-bottom: none;
+}
+
+.cep-label {
+  color: #6b6b68;
+  font-weight: 400;
+}
+
+.cep-valor {
+  color: #1c1c1a;
+  font-weight: 500;
+  text-align: right;
+  max-width: 60%;
+}
