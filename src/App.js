@@ -16,14 +16,14 @@ const abas = [
 ];
 
 function App() {
-  
+
   const [abaAtiva, setAbaAtiva] = useState("todolist");
 
   return (
     <div className="app">
       <header className="header">
         <div className="header-inner">
-          <span className="app-title">React App</span>
+          <span className="app-title">Aplicação com multifunções - Tudo que você precisa🎀</span>
           <nav className="nav">
             {abas.map((aba) => (
               <button
