@@ -56,6 +56,7 @@ body {
   transition: all 0.3s ease;
   font-weight: bold;
   box-shadow: 0 3px 6px rgba(255, 105, 180, 0.3);
+  min-width: 120px;  
 }
 
 .nav-btn:hover {
@@ -81,7 +82,7 @@ body {
   border: 2px dashed #ffb6e6;
 }
 
-/* ── Card base ── */
+
 .card {
   background: #ffffff;
   border: 1px solid #e5e5e3;

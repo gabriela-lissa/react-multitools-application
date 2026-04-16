@@ -23,7 +23,7 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="header-inner">
-          <span className="app-title">Aplicação com multifunções - Tudo que você precisa🎀</span>
+          <span className="app-title">Aplicação com multifunções🎀</span>
           <nav className="nav">
             {abas.map((aba) => (
               <button
